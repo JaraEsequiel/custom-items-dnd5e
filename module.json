@@ -1,0 +1,60 @@
+{
+  "id": "custom-weapons",
+  "title": "Armas y Objetos Personalizados",
+  "description": "Módulo que recopila armas y objetos mágicos personalizados para las campañas de D&D 5e, incluyendo el legendario Cigarro del Dragón.",
+  "authors": [
+    {
+      "name": "Vex & Antigravity",
+      "url": "https://github.com/vex"
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "3.0.0"
+        }
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "custom-items",
+      "label": "Objetos Personalizados",
+      "path": "packs/custom-items",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "weapon",
+            "consumable",
+            "equipment",
+            "loot"
+          ]
+        }
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Objetos Personalizados",
+      "color": "#ffaa00",
+      "sorting": "m",
+      "packs": [
+        "custom-items"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "name": "Cigarro del Dragón",
+  "system": {
+    "description": {
+      "value": "<p>This cigar has been created to mimic the breath of a dragon.</p><hr><p><strong>Draconic Breath.</strong> With an action, you can light the cigar for 1 minute. While it is lit, you can use your bonus action to exhale the smoke, emulating the breath of a dragon. Each creature in a 30-foot cone in front of you must make a <strong>Dexterity saving throw DC 15</strong> or take <strong>3d6</strong> fire, cold, lightning, poison, or acid damage (your choice), taking half as much damage on a successful save.</p><p><strong>Smoke Drawback.</strong> When you use the breath, you need to make a <strong>Constitution saving throw DC 10</strong> or take half of the damage you dealt with the breath, as the smoke burns your lungs.</p><p><strong>Dragon's Voice.</strong> Once you use the cigar, your voice becomes extremely deep for 10 minutes, making it unrecognizable.</p><p><em>The cigar is completely consumed after 6 uses of the breath attack.</em></p>",
+      "chat": ""
+    },
+    "price": {
+      "value": 500,
+      "denomination": "gp"
+    },
+    "source": {
+      "custom": "Campaign Homebrew",
+      "rules": "2024",
+      "license": "CC-BY-4.0",
+      "book": ""
+    },
+    "identified": true,
+    "unidentified": {
+      "description": ""
+    },
+    "container": null,
+    "quantity": 1,
+    "weight": {
+      "value": 0.1,
+      "units": "lb"
+    },
+    "rarity": "rare",
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "uses": {
+      "max": "6",
+      "autoDestroy": true,
+      "spent": 0,
+      "recovery": []
+    },
+    "damage": {
+      "base": {
+        "number": null,
+        "denomination": null,
+        "types": [],
+        "custom": {
+          "enabled": false
+        },
+        "scaling": {
+          "number": 1
+        }
+      },
+      "replace": false
+    },
+    "type": {
+      "value": "trinket",
+      "subtype": ""
+    },
+    "magicalBonus": null,
+    "properties": [
+      "mgc"
+    ],
+    "activities": {
+      "encenderHabano00": {
+        "type": "utility",
+        "_id": "encenderHabano00",
+        "sort": 0,
+        "name": "Encender Habano",
+        "img": "icons/svg/fire.svg",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Enciende el habano por 1 minuto. Mientras esté encendido, puedes usar tu acción adicional para exhalar el humo dracónico."
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "1"
+        },
+        "range": {
+          "override": false,
+          "units": "self"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        }
+      },
+      "alientoDragon000": {
+        "type": "save",
+        "_id": "alientoDragon000",
+        "sort": 1,
+        "name": "Aliento de Dragón",
+        "img": "icons/magic/fire/breath-cone-orange.webp",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "override": false,
+          "condition": "Habano encendido"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": "Exhalas una ráfaga de humo elemental imitando el aliento de un dragón."
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false,
+          "units": "self"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cone",
+            "size": "30"
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "fire"
+              ]
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "flat",
+            "formula": "15"
+          }
+        }
+      },
+      "retrocesoHumo000": {
+        "type": "save",
+        "_id": "retrocesoHumo000",
+        "sort": 2,
+        "name": "Retroceso de Humo (Burns Lungs)",
+        "img": "icons/svg/poison.svg",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "El humo ardiente del cigarro quema tus pulmones al exhalar."
+        },
+        "duration": {
+          "units": "inst",
+          "override": false
+        },
+        "range": {
+          "override": false,
+          "units": "self"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "flat",
+            "formula": "10"
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "0"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "fire"
+              ]
+            }
+          ],
+          "onSave": "none"
+        }
+      },
+      "vozProfunda00000": {
+        "type": "utility",
+        "_id": "vozProfunda00000",
+        "sort": 3,
+        "name": "Voz Profunda",
+        "img": "icons/svg/sound.svg",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": "Tu voz se vuelve extremadamente profunda e irreconocible por los próximos 10 minutos."
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "10"
+        },
+        "range": {
+          "override": false,
+          "units": "self"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        }
+      }
+    },
+    "identifier": "cigarro-del-dragon"
+  },
+  "_id": "cigarroDragon0000",
+  "type": "consumable",
+  "folder": null,
+  "img": "modules/custom-weapons/assets/images/dragons_cigar.png",
+  "effects": [],
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.344",
+    "systemId": "dnd5e",
+    "systemVersion": "5.3.3",
+    "createdTime": 1740680136756,
+    "modifiedTime": 1740680136756,
+    "lastModifiedBy": "vex",
+    "exportSource": null
+  },
+  "_key": "!items!cigarroDragon0000"
+}
