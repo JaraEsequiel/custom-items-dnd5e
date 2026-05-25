@@ -2,7 +2,7 @@
   "name": "Cigarro del Dragón",
   "system": {
     "description": {
-      "value": "<p>This cigar has been created to mimic the breath of a dragon.</p><hr><p><strong>Draconic Breath.</strong> With an action, you can light the cigar for 1 minute. While it is lit, you can use your bonus action to exhale the smoke, emulating the breath of a dragon. Each creature in a 30-foot cone in front of you must make a <strong>Dexterity saving throw DC 15</strong> or take <strong>3d6</strong> fire, cold, lightning, poison, or acid damage (your choice), taking half as much damage on a successful save.</p><p><strong>Smoke Drawback.</strong> When you use the breath, you need to make a <strong>Constitution saving throw DC 10</strong> or take half of the damage you dealt with the breath, as the smoke burns your lungs.</p><p><strong>Dragon's Voice.</strong> Once you use the cigar, your voice becomes extremely deep for 10 minutes, making it unrecognizable.</p><p><em>The cigar is completely consumed after 6 uses of the breath attack.</em></p>",
+      "value": "<p>Este habano ha sido creado para imitar el aliento de un dragón.</p><hr><p><strong>Aliento Dracónico.</strong> Con una acción, puedes encender el habano durante 1 minuto. Mientras esté encendido, puedes usar tu acción adicional para exhalar el humo, imitando el aliento de un dragón. Cada criatura en un cono de 30 pies frente a ti debe realizar una <strong>salvación de Destreza DC 15</strong> o sufrir <strong>3d6</strong> puntos de daño por fuego, frío, rayo, veneno o ácido (a tu elección), sufriendo la mitad del daño con una salvación exitosa.</p><p><strong>Retroceso de Humo.</strong> Cuando usas el aliento, debes realizar una <strong>salvación de Constitución DC 10</strong> o sufrir la mitad del daño que infligiste con el aliento, ya que el humo quema tus pulmones.</p><p><strong>Voz del Dragón.</strong> Una vez que usas el habano, tu voz se vuelve extremadamente profunda durante 10 minutos, haciéndola irreconocible.</p><p><em>El habano se consume por completo después de 6 usos del ataque de aliento.</em></p>",
       "chat": ""
     },
     "price": {
@@ -10,7 +10,7 @@
       "denomination": "gp"
     },
     "source": {
-      "custom": "Campaign Homebrew",
+      "custom": "Homebrew de Campaña",
       "rules": "2024",
       "license": "CC-BY-4.0",
       "book": ""
@@ -200,7 +200,7 @@
         "type": "save",
         "_id": "retrocesoHumo000",
         "sort": 2,
-        "name": "Retroceso de Humo (Burns Lungs)",
+        "name": "Retroceso de Humo (Quema Pulmones)",
         "img": "icons/svg/poison.svg",
         "activation": {
           "type": "special",
@@ -277,7 +277,7 @@
         "type": "utility",
         "_id": "vozProfunda00000",
         "sort": 3,
-        "name": "Voz Profunda",
+        "name": "Voz Profunda (10 mins)",
         "img": "icons/svg/sound.svg",
         "activation": {
           "type": "special",

@@ -1,5 +1,5 @@
-2026/05/25-15:06:26.218768 7faf96ffd6c0 Delete type=3 #1
-2026/05/25-15:06:26.223457 7faf95ffb6c0 Level-0 table #5: started
-2026/05/25-15:06:26.227640 7faf95ffb6c0 Level-0 table #5: 2833 bytes OK
-2026/05/25-15:06:26.233593 7faf95ffb6c0 Delete type=0 #3
-2026/05/25-15:06:26.233901 7faf95ffb6c0 Manual compaction at level-0 from '!items!cigarroDragon0000' @ 72057594037927935 : 1 .. '!items!cigarroDragon0000' @ 0 : 0; will stop at (end)
+2026/05/25-15:18:49.657326 7efbd4bfd6c0 Delete type=3 #1
+2026/05/25-15:18:49.660083 7efbc77fe6c0 Level-0 table #5: started
+2026/05/25-15:18:49.664299 7efbc77fe6c0 Level-0 table #5: 2758 bytes OK
+2026/05/25-15:18:49.670299 7efbc77fe6c0 Delete type=0 #3
+2026/05/25-15:18:49.670762 7efbc77fe6c0 Manual compaction at level-0 from '!items!cigarroDragon0000' @ 72057594037927935 : 1 .. '!items!cigarroDragon0000' @ 0 : 0; will stop at (end)
