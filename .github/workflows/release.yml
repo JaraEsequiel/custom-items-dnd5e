@@ -41,7 +41,7 @@ jobs:
         run: |
           npx --yes @foundryvtt/foundryvtt-cli package pack \
             -n custom-items \
-            --inputDirectory src \
+            --inputDirectory src/custom-items \
             --outputDirectory packs
 
       - name: Zip module
