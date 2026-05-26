@@ -1,0 +1,22 @@
+{
+  "name": "Magic Items",
+  "_id": "magicItemsFold01",
+  "description": "Objetos mágicos homebrew.",
+  "type": "Item",
+  "color": "#7b1fa2",
+  "folder": null,
+  "sort": 0,
+  "sorting": "a",
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.344",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": 1748278800000,
+    "modifiedTime": 1748278800000,
+    "lastModifiedBy": "esequiel",
+    "exportSource": null
+  },
+  "_key": "!folders!magicItemsFold01"
+}
