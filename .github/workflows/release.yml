@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Extract version from tag
+        id: meta
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/v}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Patch module.json with version and download URL
+        env:
+          VERSION: ${{ steps.meta.outputs.version }}
+          TAG: ${{ steps.meta.outputs.tag }}
+          REPO: ${{ github.repository }}
+        run: |
+          DOWNLOAD="https://github.com/${REPO}/releases/download/${TAG}/module.zip"
+          jq --arg v "$VERSION" --arg d "$DOWNLOAD" \
+             '.version = $v | .download = $d' module.json > module.json.tmp
+          mv module.json.tmp module.json
+          cat module.json
+
+      - name: Build compendium packs from src/
+        run: |
+          npx --yes @foundryvtt/foundryvtt-cli package pack \
+            -n custom-items \
+            --inputDirectory src/custom-items \
+            --outputDirectory packs
+
+      - name: Zip module
+        run: zip -r module.zip module.json README.md assets packs
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.meta.outputs.tag }}
+        run: |
+          gh release create "$TAG" \
+            module.json module.zip \
+            --title "$TAG" \
+            --generate-notes
