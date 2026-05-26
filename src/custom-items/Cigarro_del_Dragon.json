@@ -331,8 +331,8 @@
   },
   "_id": "cigarroDragon0000",
   "type": "consumable",
-  "folder": null,
-  "img": "modules/custom-weapons/assets/images/dragons_cigar.png",
+  "folder": "magicItemsFold01",
+  "img": "modules/custom-items/assets/images/dragons_cigar.png",
   "effects": [],
   "sort": 100000,
   "ownership": {
